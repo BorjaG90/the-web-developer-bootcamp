@@ -4,6 +4,7 @@ var router = express.Router();
 var Campground  = require("../models/campground");
 
 var middleware = require("../middleware");
+
 //CAMPGROUNDS ROUTES
 //INDEX
 router.get("/",function(req, res) {
@@ -72,7 +73,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
             res.redirect("/campgrounds/" + req.params.id);
         }
     });
-    
+
 });
 
 //DELETE CAMPGROUND ROUTE
